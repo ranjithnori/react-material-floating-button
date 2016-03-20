@@ -10,7 +10,9 @@ var MainButton = React.createClass({
       onClick: function(){},
       iconResting: '',
       iconActive: '',
-      label: null
+      label: null,
+      src: null,
+      imageClass: null
     };
   },
   render: function(){
@@ -22,6 +24,13 @@ var MainButton = React.createClass({
         <a href={this.props.href} className={mainClass} onClick={this.props.onClick} data-mfb-label={this.props.label}>
           <i className={iconResting}></i>
           <i className={iconActive}></i>
+        </a>
+      );
+    }
+    else if(this.props.src){
+      return (
+        <a href={this.props.href} className={mainClass} onClick={this.props.onClick} data-mfb-label={this.props.label}>
+          <img className={this.props.imageClass} src={this.props.src}/>
         </a>
       );
     } else {
